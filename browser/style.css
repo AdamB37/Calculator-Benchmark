@@ -23,6 +23,7 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
 .row-1 {
   display: table-row;
 
+
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 }
@@ -81,7 +82,8 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   vertical-align: bottom;
   color:white;
   font-size: 40pt;
-  font-weight: lighter;
+  font-style: thin;
+
 }
 .button-grey {
   display: table-cell;
@@ -91,6 +93,19 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
+  font-size: 16pt;
+  font-style: thin;
+}
+.button-grey-onclick {
+  display: table-cell;
+  background-color: rgb(178,178,178);
+  height: 47px;
+  width: 56px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+  font-style: thin;
 }
 .button-grey-top {
   display: table-cell;
@@ -100,6 +115,8 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
+  font-size: 16pt;
+  font-style: thin;
 }
 .button-grey-zero {
   display: table-cell;
@@ -111,6 +128,8 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-family: 'Roboto', sans-serif;
   vertical-align: middle;
   border-right:0;
+  font-size: 16pt;
+  font-style: thin;
 }
 .button-orange {
   display: table-cell;
@@ -121,6 +140,8 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   text-align: center;
   vertical-align: middle;
   color: white;
+  font-size: 16pt;
+  font-style: thin;
 }
 .button-orange-bottom {
   display: table-cell;
@@ -132,4 +153,6 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   text-align: center;
   vertical-align: middle;
   color: white;
+  font-size: 16pt;
+  font-style: thin;
 }
