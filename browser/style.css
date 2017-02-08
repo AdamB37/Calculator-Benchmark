@@ -1,0 +1,111 @@
+div body .container .result-box .button-orange .button-orange-bottom .button-grey-top .button-grey .button-grey-zero .row-1 .row-2 .row-3 .row-4 .row-5{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  display: table;
+  table-layout: fixed;
+  width: 230px;
+  height: 318px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.result-box {
+  display: table-row;
+  table-layout: fixed;
+  box-shadow: 0;
+  border-width: 1px;
+  border-color: black;
+  background-color: rgb(153, 153, 153);
+  color: black;
+  width: 230px;
+  height: 79px;
+}
+
+.row-1 {
+  display: table-row;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 46px;
+}
+
+.row-2{
+  display: table-row;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 46px;
+}
+
+.row-3 {
+  display: table-row;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 46px;
+
+}
+
+.row-4 {
+  display: table-row;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 46px;
+
+}
+
+.row-5 {
+  display: table-row;
+  border: 0px;
+  height: 46px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.column{
+  display:
+  border-right: 1px solid rgb(141, 141, 141);
+
+}
+.button-grey {
+  display: table-cell;
+  background-color: rgb(223,223,223);
+  height: 45px;
+  width: 56.6px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+}
+.button-grey-top {
+  display: table-cell;
+  background-color: rgb(213,213,213);
+  height: 45px;
+  width: 56.6px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+}
+.button-grey-zero {
+  display: table-cell;
+  background-color: rgb(223,223,223);
+  height: 45px;
+  width: 114.3px;
+  border-bottom-left-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+}
+.button-orange {
+  display: table-cell;
+  background-color: rgb(223,145,60);
+  height: 45px;
+  width: 56.6px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+}
+.button-orange-bottom {
+  display: table-cell;
+  background-color: rgb(223,145,60);
+  height: 45px;
+  width: 56.6px;
+  border-bottom-right-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+}

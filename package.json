@@ -1,0 +1,19 @@
+{
+  "name": "calculator-benchmark",
+  "version": "1.0.0",
+  "description": "Benchmarks goals are projects that are designed to be done solo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamB37/Calculator-Benchmark.git"
+  },
+  "author": "Adam Beshir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamB37/Calculator-Benchmark/issues"
+  },
+  "homepage": "https://github.com/AdamB37/Calculator-Benchmark#readme"
+}

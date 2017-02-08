@@ -1,0 +1,69 @@
+.button-orange1 {
+  border: 1px solid black;
+  display: inline-table;
+  background-color: rgb(223,145,60);
+  color: black;
+  margin-left: -38px;
+  padding: 20px 16px 20px 16px;
+  left: 75%;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.button-grey1{
+  border: 1px solid black;
+  display: inline-table;
+  background-color: rgb(213,213,213);
+  color: black;
+  margin-right: 0px;
+  padding: 20px 16px 20px 16px;
+  position: relative;
+}
+.button-grey2{
+  border: 1px solid black;
+  display: inline-table;
+  background-color: rgb(213,213,213);
+  color: black;
+  margin-left: -63px;
+  padding: 20px 16px 20px 16px;
+  left: 25%;
+  position: relative;
+}
+.button-grey3{
+  border: 1px solid black;
+  display: inline-table;
+  background-color: rgb(213,213,213);
+  color: black;
+  margin-left: -70px;
+  padding: 20px 20px 20px 20px;
+  left: 50%;
+  position: relative;
+}
+.result-box{
+  box-shadow: 0;
+  border-width: 1px;
+  border-color: black;
+  background-color: rgb(153, 153, 153);
+  color: black;
+  width: 230px;
+  height: 79px;
+  margin: auto;
+}
+.div-wrapper{
+
+  width: 230px;
+  height: 318px;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
