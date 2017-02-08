@@ -15,15 +15,12 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
 
 .row-0 {
   display: table-row;
-
   border-bottom: 0px;
   height: 80px;
 }
 
 .row-1 {
   display: table-row;
-
-
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 }
@@ -52,13 +49,10 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   display: table-row;
   border: 0px;
   height: 47px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 .column{
   display: table-column;
   border-right: 1px solid rgb(141, 141, 141);
-
 }
 
 .result-box {
@@ -66,12 +60,14 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   background-color: rgb(153, 153, 153);
   width: 56px;
 }
+
 .result-box-left {
   display: table-cell;
   background-color: rgb(153, 153, 153);
   width: 56px;
   border-top-left-radius: 5px;
 }
+
 .result-box-right {
   display: table-cell;
   background-color: rgb(153, 153, 153);
@@ -85,6 +81,7 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-style: thin;
 
 }
+
 .button-grey {
   display: table-cell;
   background-color: rgb(225,225,225);
@@ -96,17 +93,15 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-size: 16pt;
   font-style: thin;
 }
-.button-grey-onclick {
-  display: table-cell;
+
+.button-grey:hover {
   background-color: rgb(178,178,178);
-  height: 47px;
-  width: 56px;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 16pt;
-  font-style: thin;
 }
+
+.button-grey:active {
+  background-color: rgb(178,178,178);
+}
+
 .button-grey-top {
   display: table-cell;
   background-color: rgb(213,213,213);
@@ -118,11 +113,26 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-size: 16pt;
   font-style: thin;
 }
+
+.button-grey-top:hover {
+  background-color: rgb(170,170,170);
+}
+
+.button-grey-top:active {
+  background-color: rgb(170,170,170);
+}
+
+
+span {
+  width: 50%;
+}
+
 .button-grey-zero {
   display: table-cell;
   background-color: rgb(225,225,225);
   height: 47px;
-  width: 56px;
+  width: 50%;
+  table-layout: fixed;
   border-bottom-left-radius: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -131,6 +141,15 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-size: 16pt;
   font-style: thin;
 }
+
+.button-grey-zero:hover {
+  background-color: rgb(178,178,178);
+}
+
+.button-grey-zero:active {
+  background-color: rgb(178,178,178);
+}
+
 .button-orange {
   display: table-cell;
   background-color: rgb(223,145,60);
@@ -143,6 +162,14 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   font-size: 16pt;
   font-style: thin;
 }
+
+.button-orange:hover {
+  background-color: rgb(186, 119, 56);
+}
+.button-orange:active {
+  background-color: rgb(186, 119, 56);
+}
+
 .button-orange-bottom {
   display: table-cell;
   background-color: rgb(223,145,60);
@@ -155,4 +182,11 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   color: white;
   font-size: 16pt;
   font-style: thin;
+}
+
+.button-orange-bottom:hover {
+  background-color: rgb(186, 119, 56);
+}
+.button-orange-bottom:active {
+  background-color: rgb(186, 119, 56);
 }
