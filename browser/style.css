@@ -1,10 +1,10 @@
-div body .container .result-box .button-orange .button-orange-bottom .button-grey-top .button-grey .button-grey-zero .row-0 .row-1 .row-2 .row-3 .row-4 .row-5{
+div body .calculator .result-box .button-orange .button-orange-bottom .button-grey-top .button-grey .button-grey-zero .row-0 .row-1 .row-2 .row-3 .row-4 .row-5{
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-.container {
+.calculator {
   margin:auto;
   display: flex;
   flex-direction: column;
