@@ -6,92 +6,86 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
 
 .container {
   margin:auto;
-  display: table;
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 232px;
+  display: flex;
+  flex-direction: column;
+  width: 233.5px;
   height: 321px;
+  flex-wrap: wrap;
 }
 
 .row-0 {
-  display: table-row;
+  flex-direction: row;
+  display: flex;
   border-bottom: 0px;
-  height: 80px;
+  height: 80.5px;
 }
 
 .row-1 {
-  display: table-row;
+  flex-direction: row;
+  display: flex;
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 }
 
-.row-2{
-  display: table-row;
+.row-2 {
+  flex-direction: row;
+  display: flex;
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 }
 
 .row-3 {
-  display: table-row;
+  flex-direction: row;
+  display: flex;
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 
 }
 
 .row-4 {
-  display: table-row;
+  flex-direction: row;
+  display: flex;
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
-
 }
 
 .row-5 {
-  display: table-row;
-  border: 0px;
+  flex-direction: row;
+  display: flex;
   height: 47px;
+  justify-content: flex-end;
 }
 .column{
-  display: table-column;
   border-right: 1px solid rgb(141, 141, 141);
 }
 
+
 .result-box {
-  display: table-cell;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
   background-color: rgb(153, 153, 153);
-  width: 56px;
-}
-
-.result-box-left {
-  display: table-cell;
-  background-color: rgb(153, 153, 153);
-  width: 56px;
-  border-top-left-radius: 5px;
-}
-
-.result-box-right {
-  display: table-cell;
-  background-color: rgb(153, 153, 153);
-  width: 56px;
+  width: 100%;
   border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+  text-align: right;
   vertical-align: bottom;
   color:white;
   font-size: 40pt;
-  font-style: thin;
-
+  padding-right: 10px;
 }
 
 .button-grey {
-  display: table-cell;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(225,225,225);
-  height: 47px;
-  width: 56px;
+  width: 25%;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
   font-size: 16pt;
-  font-style: thin;
 }
 
 .button-grey:hover {
@@ -103,15 +97,15 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
 }
 
 .button-grey-top {
-  display: table-cell;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(213,213,213);
-  height: 47px;
-  width: 56px;
+  width: 25%;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
   font-size: 16pt;
-  font-style: thin;
 }
 
 .button-grey-top:hover {
@@ -122,24 +116,20 @@ div body .container .result-box .button-orange .button-orange-bottom .button-gre
   background-color: rgb(170,170,170);
 }
 
-
-span {
-  width: 50%;
-}
-
 .button-grey-zero {
-  display: table-cell;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(225,225,225);
-  height: 47px;
   width: 50%;
   table-layout: fixed;
   border-bottom-left-radius: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   vertical-align: middle;
-  border-right:0;
   font-size: 16pt;
-  font-style: thin;
+
+
 }
 
 .button-grey-zero:hover {
@@ -151,16 +141,17 @@ span {
 }
 
 .button-orange {
-  display: table-cell;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(223,145,60);
-  height: 45px;
-  width: 56px;
+  width: 25%;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
   color: white;
   font-size: 16pt;
-  font-style: thin;
+
 }
 
 .button-orange:hover {
@@ -171,17 +162,18 @@ span {
 }
 
 .button-orange-bottom {
-  display: table-cell;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(223,145,60);
-  height: 45px;
-  width: 56px;
+  width: 25%;
   border-bottom-right-radius: 5px;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
   color: white;
   font-size: 16pt;
-  font-style: thin;
+
 }
 
 .button-orange-bottom:hover {
