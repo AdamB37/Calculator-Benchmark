@@ -65,7 +65,7 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   justify-content: flex-end;
   flex-direction: column;
   background-color: rgb(153, 153, 153);
-  width: 100%;
+  width: 223.5px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   font-family: 'Roboto', sans-serif;
@@ -90,10 +90,12 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 
 .button-grey:hover {
   background-color: rgb(178,178,178);
+  transition-duration: 0.1s
 }
 
 .button-grey:active {
   background-color: rgb(178,178,178);
+  transition-duration: 0.1s;
 }
 
 .button-grey-top {
@@ -110,34 +112,37 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 
 .button-grey-top:hover {
   background-color: rgb(170,170,170);
+  transition-duration: 0.1s;
 }
 
 .button-grey-top:active {
   background-color: rgb(170,170,170);
+  transition-duration: 0.1s;
 }
 
 .button-grey-zero {
   display: flex;
-  justify-content: center;
+  justify-content: center;;
   flex-direction: column;
   background-color: rgb(225,225,225);
-  width: 50%;
+  width: 91.75px;
   table-layout: fixed;
   border-bottom-left-radius: 5px;
-  text-align: center;
+  text-align: left;
   font-family: 'Roboto', sans-serif;
   vertical-align: middle;
   font-size: 16pt;
-
-
+  padding-left: 25px;
 }
 
 .button-grey-zero:hover {
   background-color: rgb(178,178,178);
+  transition-duration: 0.1s;
 }
 
 .button-grey-zero:active {
   background-color: rgb(178,178,178);
+  transition-duration: 0.1s;
 }
 
 .button-orange {
@@ -156,9 +161,11 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 
 .button-orange:hover {
   background-color: rgb(186, 119, 56);
+  transition-duration: 0.1s;
 }
 .button-orange:active {
   background-color: rgb(186, 119, 56);
+  transition-duration: 0.1s;
 }
 
 .button-orange-bottom {
@@ -178,7 +185,9 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 
 .button-orange-bottom:hover {
   background-color: rgb(186, 119, 56);
+  transition-duration: 0.1s;
 }
 .button-orange-bottom:active {
   background-color: rgb(186, 119, 56);
+  transition-duration: 0.1s;
 }
