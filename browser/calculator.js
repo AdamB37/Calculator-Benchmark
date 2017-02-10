@@ -19,12 +19,13 @@ function shrinkFont(string) {
   }
 }
 
+
 function Calculator(){
   this.evaluation = ""
   this.display = document.getElementById("display")
   this.clearHTML = document.getElementById("clear")
   this.displayValue = "0"
-  this.arguments = 0;
+  this.arguments = 0
 }
 
 Calculator.prototype.add = function() {
@@ -121,6 +122,7 @@ Calculator.prototype.clear = function() {
 Calculator.prototype.zero = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "0" : this.displayValue + "0"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "0"
   this.clearHTML.innerHTML = "C"
 }
@@ -197,6 +199,89 @@ Calculator.prototype.nine = function() {
   this.clearHTML.innerHTML = "C"
 }
 
+Calculator.prototype.keyStrokeHandler = function(keyStroke) {
+  var keyCode = keyStroke.keyCode
+  switch (keyCode) {
+    case 48:
+      this.zero()
+      break
+
+    case 49:
+      this.one()
+      break
+
+    case 50:
+      this.two()
+      break
+
+    case 51:
+      this.three()
+      break
+
+    case 52:
+      this.four()
+      break
+
+    case 53:
+      this.five()
+      break
+
+    case 54:
+      this.six()
+      break
+
+    case 55:
+      this.seven()
+      break
+
+    case 56:
+      this.eight()
+      break
+
+    case 57:
+      this.nine()
+      break
+
+    case 43:
+      this.add()
+      break
+
+    case 45:
+      this.subtract()
+      break
+
+    case 42:
+      this.multiply()
+      break
+
+    case 47:
+      this.divide()
+      break
+
+    case 13:
+    case 61:
+      this.equals()
+      break
+
+    case 46:
+      this.decimal()
+      break
+
+    case 99:
+      this.clear()
+      break
+
+    case 37:
+      this.percent()
+      break
+
+    default:
+      break
+  }
+
+
+}
+
 var calculator = new Calculator
 document.getElementById("zero").addEventListener("click", function() { calculator.zero() })
 document.getElementById("one").addEventListener("click", function() { calculator.one() })
@@ -217,3 +302,4 @@ document.getElementById("percent").addEventListener("click", function() { calcul
 document.getElementById("decimal").addEventListener("click", function() { calculator.decimal() })
 document.getElementById("sign").addEventListener("click", function() { calculator.reverseSign() })
 document.getElementById("equals").addEventListener("click", function() { calculator.equals() })
+document.addEventListener("keypress", function() { calculator.keyStrokeHandler(event) })
