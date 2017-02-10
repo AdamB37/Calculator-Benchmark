@@ -10,6 +10,15 @@ function pendingOperation(string) {
   else return false
 }
 
+function shrinkFont(string) {
+  if(string.length>7) {
+    var resultSize = parseFloat(window.getComputedStyle(document.getElementById("display")).fontSize)*0.9
+    if(resultSize > 8){
+      document.getElementById("display").style.fontSize = resultSize.toString() + "px"
+    }
+  }
+}
+
 function Calculator(){
   this.evaluation = ""
   this.display = document.getElementById("display")
@@ -75,7 +84,9 @@ Calculator.prototype.divide = function() {
 }
 
 Calculator.prototype.decimal = function() {
-  //this is harder than you think brah
+  this.evaluation = this.evaluation + "."
+  this.displayValue = this.displayValue + "."
+  this.display.innerHTML = this.displayValue
 }
 
 Calculator.prototype.percent = function() {
@@ -89,6 +100,9 @@ Calculator.prototype.reverseSign = function(a) {
 }
 
 Calculator.prototype.equals = function() {
+  if(last(this.evaluation) === ".") {
+    this.evaluation = this.evaluation.slice(0,-1)
+  }
   this.operationPending = false
   this.displayValue = eval(this.evaluation)
   this.evaluation = eval(this.evaluation).toString()
@@ -101,6 +115,7 @@ Calculator.prototype.clear = function() {
   this.display.innerHTML = this.displayValue
   this.clearHTML.innerHTML = "AC"
   this.arguments = 0
+  document.getElementById("display").style.fontSize = "40pt"
 }
 
 Calculator.prototype.zero = function() {
@@ -113,6 +128,7 @@ Calculator.prototype.zero = function() {
 Calculator.prototype.one = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "1" : this.displayValue + "1"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "1"
   this.clearHTML.innerHTML = "C"
 }
@@ -120,6 +136,7 @@ Calculator.prototype.one = function() {
 Calculator.prototype.two = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "2" : this.displayValue + "2"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "2"
   this.clearHTML.innerHTML = "C"
 }
@@ -127,6 +144,7 @@ Calculator.prototype.two = function() {
 Calculator.prototype.three = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "3" : this.displayValue + "3"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "3"
   this.clearHTML.innerHTML = "C"
 }
@@ -134,6 +152,7 @@ Calculator.prototype.three = function() {
 Calculator.prototype.four = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "4" : this.displayValue + "4"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "4"
   this.clearHTML.innerHTML = "C"
 }
@@ -141,6 +160,7 @@ Calculator.prototype.four = function() {
 Calculator.prototype.five = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "5" : this.displayValue + "5"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "5"
   this.clearHTML.innerHTML = "C"
 }
@@ -148,6 +168,7 @@ Calculator.prototype.five = function() {
 Calculator.prototype.six = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "6" : this.displayValue + "6"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "6"
   this.clearHTML.innerHTML = "C"
 }
@@ -155,6 +176,7 @@ Calculator.prototype.six = function() {
 Calculator.prototype.seven = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "7" : this.displayValue + "7"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "7"
   this.clearHTML.innerHTML = "C"
 }
@@ -162,6 +184,7 @@ Calculator.prototype.seven = function() {
 Calculator.prototype.eight = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "8" : this.displayValue + "8"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "8"
   this.clearHTML.innerHTML = "C"
 }
@@ -169,6 +192,7 @@ Calculator.prototype.eight = function() {
 Calculator.prototype.nine = function() {
   this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "9" : this.displayValue + "9"
   this.display.innerHTML = this.displayValue
+  shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "9"
   this.clearHTML.innerHTML = "C"
 }

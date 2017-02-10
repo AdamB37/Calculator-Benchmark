@@ -89,7 +89,7 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 }
 
 .button-grey:hover {
-  background-color: rgb(178,178,178);
+  background-color: rgb(201,201,201);
   transition-duration: 0.1s
 }
 
@@ -111,7 +111,7 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 }
 
 .button-grey-top:hover {
-  background-color: rgb(170,170,170);
+  background-color: rgb(191,191,191);
   transition-duration: 0.1s;
 }
 
@@ -136,7 +136,7 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 }
 
 .button-grey-zero:hover {
-  background-color: rgb(178,178,178);
+  background-color: rgb(201,201,201);
   transition-duration: 0.1s;
 }
 
