@@ -10,20 +10,12 @@ function pendingOperation(string) {
   else return false
 }
 
-function shrinkFont(string) {
-  if(string.length>7) {
-    var resultSize = parseFloat(window.getComputedStyle(document.getElementById("display")).fontSize)*0.9
-    if(resultSize > 8){
-      document.getElementById("display").style.fontSize = resultSize.toString() + "px"
-    }
-  }
-}
-
-
-function Calculator(){
+function Calculator(currentDOM){
+  this.dom = currentDOM
+  console.log(typeof(document))
   this.evaluation = ""
-  this.display = document.getElementById("display")
-  this.clearHTML = document.getElementById("clear")
+  this.display = this.dom.getElementById("display")
+  this.clearHTML = this.dom.getElementById("clear")
   this.displayValue = "0"
   this.arguments = 0
 }
@@ -270,7 +262,7 @@ Calculator.prototype.clear = function() {
   this.display.innerHTML = this.displayValue
   this.clearHTML.innerHTML = "AC"
   this.arguments = 0
-  document.getElementById("display").style.fontSize = "40pt"
+  this.dom.getElementById("display").style.fontSize = "40pt"
 }
 
 Calculator.prototype.zero = function() {
@@ -353,119 +345,128 @@ Calculator.prototype.nine = function() {
   this.clearHTML.innerHTML = "C"
 }
 
+Calculator.prototype.shrinkFont = function(string) {
+  if(string.length>7) {
+    var resultSize = parseFloat(window.getComputedStyle(this.dom.getElementById("display")).fontSize)*0.9
+    if(resultSize > 8) {
+      this.dom.getElementById("display").style.fontSize = resultSize.toString() + "px"
+    }
+  }
+}
+
 Calculator.prototype.keyStrokeHandler = function(keyStroke) {
   var keyCode = keyStroke.keyCode
   switch (keyCode) {
     case 48:
       this.zero()
-      document.getElementById("zero").className = "button-grey-zero-flash column"
+      this.dom.getElementById("zero").className = "button-grey-zero-flash column"
       setTimeout(function() {
-        document.getElementById("zero").className = "button-grey-zero column"
+        this.dom.getElementById("zero").className = "button-grey-zero column"
       }, 100)
 
       break
 
     case 49:
       this.one()
-      document.getElementById("one").className = "button-grey-flash column"
+      this.dom.getElementById("one").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("one").className = "button-grey column"
+        this.dom.getElementById("one").className = "button-grey column"
       }, 100)
       break
 
     case 50:
       this.two()
-      document.getElementById("two").className = "button-grey-flash column"
+      this.dom.getElementById("two").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("two").className = "button-grey column"
+        this.dom.getElementById("two").className = "button-grey column"
       }, 100)
       break
 
     case 51:
       this.three()
-      document.getElementById("three").className = "button-grey-flash column"
+      this.dom.getElementById("three").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("three").className = "button-grey column"
+        this.dom.getElementById("three").className = "button-grey column"
       }, 100)
       break
 
     case 52:
       this.four()
-      document.getElementById("four").className = "button-grey-flash column"
+      this.dom.getElementById("four").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("four").className = "button-grey column"
+        this.dom.getElementById("four").className = "button-grey column"
       }, 100)
       break
 
     case 53:
       this.five()
-      document.getElementById("five").className = "button-grey-flash column"
+      this.dom.getElementById("five").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("five").className = "button-grey column"
+        this.dom.getElementById("five").className = "button-grey column"
       }, 100)
       break
 
     case 54:
       this.six()
-      document.getElementById("six").className = "button-grey-flash column"
+      this.dom.getElementById("six").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("six").className = "button-grey column"
+        this.dom.getElementById("six").className = "button-grey column"
       }, 100)
       break
 
     case 55:
       this.seven()
-      document.getElementById("seven").className = "button-grey-flash column"
+      this.dom.getElementById("seven").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("seven").className = "button-grey column"
+        this.dom.getElementById("seven").className = "button-grey column"
       }, 100)
       break
 
     case 56:
       this.eight()
-      document.getElementById("eight").className = "button-grey-flash column"
+      this.dom.getElementById("eight").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("eight").className = "button-grey column"
+        this.dom.getElementById("eight").className = "button-grey column"
       }, 100)
       break
 
     case 57:
       this.nine()
-      document.getElementById("nine").className = "button-grey-flash column"
+      this.dom.getElementById("nine").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("nine").className = "button-grey column"
+        this.dom.getElementById("nine").className = "button-grey column"
       }, 100)
       break
 
     case 43:
       this.add()
-      document.getElementById("add").className = "button-orange-flash column"
+      this.dom.getElementById("add").className = "button-orange-flash column"
       setTimeout(function() {
-        document.getElementById("add").className = "button-orange column"
+        this.dom.getElementById("add").className = "button-orange column"
       }, 100)
       break
 
     case 45:
       this.subtract()
-      document.getElementById("subtract").className = "button-orange-flash column"
+      this.dom.getElementById("subtract").className = "button-orange-flash column"
       setTimeout(function() {
-        document.getElementById("subtract").className = "button-orange column"
+        this.dom.getElementById("subtract").className = "button-orange column"
       }, 100)
       break
 
     case 42:
       this.multiply()
-      document.getElementById("multiply").className = "button-orange-flash column"
+      this.dom.getElementById("multiply").className = "button-orange-flash column"
       setTimeout(function() {
-        document.getElementById("multiply").className = "button-orange column"
+        this.dom.getElementById("multiply").className = "button-orange column"
       }, 100)
       break
 
     case 47:
       this.divide()
-      document.getElementById("divide").className = "button-orange-flash column"
+      this.dom.getElementById("divide").className = "button-orange-flash column"
       setTimeout(function() {
-        document.getElementById("divide").className = "button-orange column"
+        this.dom.getElementById("divide").className = "button-orange column"
       }, 100)
       break
 
@@ -473,33 +474,33 @@ Calculator.prototype.keyStrokeHandler = function(keyStroke) {
 
     case 61:
       this.equals()
-      document.getElementById("equals").className = "button-orange-bottom-flash column"
+      this.dom.getElementById("equals").className = "button-orange-bottom-flash column"
       setTimeout(function() {
-        document.getElementById("equals").className = "button-orange-bottom column"
+        this.dom.getElementById("equals").className = "button-orange-bottom column"
       }, 100)
       break
 
     case 46:
       this.decimal()
-      document.getElementById("decimal").className = "button-grey-flash column"
+      this.dom.getElementById("decimal").className = "button-grey-flash column"
       setTimeout(function() {
-        document.getElementById("decimal").className = "button-grey column"
+        this.dom.getElementById("decimal").className = "button-grey column"
       }, 100)
       break
 
     case 99:
       this.clear()
-      document.getElementById("clear").className = "button-grey-top-flash column"
+      this.dom.getElementById("clear").className = "button-grey-top-flash column"
       setTimeout(function() {
-        document.getElementById("clear").className = "button-grey-top column"
+        this.dom.getElementById("clear").className = "button-grey-top column"
       }, 100)
       break
 
     case 37:
       this.percent()
-      document.getElementById("percent").className = "button-grey-top-flash column"
+      this.dom.getElementById("percent").className = "button-grey-top-flash column"
       setTimeout(function() {
-        document.getElementById("percent").className = "button-grey-top column"
+        this.dom.getElementById("percent").className = "button-grey-top column"
       }, 100)
       break
 
@@ -510,24 +511,41 @@ Calculator.prototype.keyStrokeHandler = function(keyStroke) {
 
 }
 
-var calculator = new Calculator
-document.getElementById("zero").addEventListener("click", function() { calculator.zero() })
-document.getElementById("one").addEventListener("click", function() { calculator.one() })
-document.getElementById("two").addEventListener("click", function() { calculator.two() })
-document.getElementById("three").addEventListener("click", function() { calculator.three() })
-document.getElementById("four").addEventListener("click", function() { calculator.four() })
-document.getElementById("five").addEventListener("click", function() { calculator.five() })
-document.getElementById("six").addEventListener("click", function() { calculator.six() })
-document.getElementById("seven").addEventListener("click", function() { calculator.seven() })
-document.getElementById("eight").addEventListener("click", function() { calculator.eight() })
-document.getElementById("nine").addEventListener("click", function() { calculator.nine() })
-document.getElementById("add").addEventListener("click", function() { calculator.add() })
-document.getElementById("subtract").addEventListener("click", function() { calculator.subtract() })
-document.getElementById("multiply").addEventListener("click", function() { calculator.multiply() })
-document.getElementById("divide").addEventListener("click", function() { calculator.divide() })
-document.getElementById("clear").addEventListener("click", function() { calculator.clear() })
-document.getElementById("percent").addEventListener("click", function() { calculator.percent() })
-document.getElementById("decimal").addEventListener("click", function() { calculator.decimal() })
-document.getElementById("sign").addEventListener("click", function() { calculator.reverseSign() })
-document.getElementById("equals").addEventListener("click", function() { calculator.equals() })
-document.addEventListener("keypress", function() { calculator.keyStrokeHandler(event) })
+
+function getEventTarget(currentEvent) {
+  currentEvent = currentEvent || window.event;
+  return currentEvent.target
+}
+
+function editCell(currentEvent) {
+  var target = getEventTarget(currentEvent)
+  if(target.tagName.toLowerCase() === "div") {
+    if(target.id === "one") calculator2.one()
+  }
+}
+
+var calculators = document.getElementsByClassName("calculator")
+console.log(calculators)
+for(i = 0; i < calculators.length; i++) {
+  new Calculator(calculators[i])
+}
+document.getElementById("zero").addEventListener("click", function() { calculator1.zero() })
+// document.getElementById("one").addEventListener("click", function() { calculator2.one() })
+document.getElementById("two").addEventListener("click", function() { calculator1.two() })
+document.getElementById("three").addEventListener("click", function() { calculator1.three() })
+document.getElementById("four").addEventListener("click", function() { calculator1.four() })
+document.getElementById("five").addEventListener("click", function() { calculator1.five() })
+document.getElementById("six").addEventListener("click", function() { calculator1.six() })
+document.getElementById("seven").addEventListener("click", function() { calculator1.seven() })
+document.getElementById("eight").addEventListener("click", function() { calculator1.eight() })
+document.getElementById("nine").addEventListener("click", function() { calculator1.nine() })
+document.getElementById("add").addEventListener("click", function() { calculator1.add() })
+document.getElementById("subtract").addEventListener("click", function() { calculator1.subtract() })
+document.getElementById("multiply").addEventListener("click", function() { calculator1.multiply() })
+document.getElementById("divide").addEventListener("click", function() { calculator1.divide() })
+document.getElementById("clear").addEventListener("click", function() { calculator1.clear() })
+document.getElementById("percent").addEventListener("click", function() { calculator1.percent() })
+document.getElementById("decimal").addEventListener("click", function() { calculator1.decimal() })
+document.getElementById("sign").addEventListener("click", function() { calculator1.reverseSign() })
+document.getElementById("equals").addEventListener("click", function() { calculator1.equals() })
+document.addEventListener("keypress", function() { calculator1.keyStrokeHandler(event) })

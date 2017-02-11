@@ -4,6 +4,14 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   border: 0;
 }
 
+.duplicates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: auto;
+}
+
 .calculator {
   margin:auto;
   display: flex;
