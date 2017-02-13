@@ -1,0 +1,184 @@
+div body .calculator .result-box .button-orange .button-orange-bottom .button-grey-top .button-grey .button-grey-zero .row-0 .row-1 .row-2 .row-3 .row-4 .row-5{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.calculator {
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  width: 233.5px;
+  height: 321px;
+  flex-wrap: wrap;
+}
+
+.row-0 {
+  flex-direction: row;
+  display: flex;
+  border-bottom: 0px;
+  height: 80.5px;
+}
+
+.row-1 {
+  flex-direction: row;
+  display: flex;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 47px;
+}
+
+.row-2 {
+  flex-direction: row;
+  display: flex;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 47px;
+}
+
+.row-3 {
+  flex-direction: row;
+  display: flex;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 47px;
+
+}
+
+.row-4 {
+  flex-direction: row;
+  display: flex;
+  border-bottom: 1px solid rgb(141, 141, 141);
+  height: 47px;
+}
+
+.row-5 {
+  flex-direction: row;
+  display: flex;
+  height: 47px;
+  justify-content: flex-end;
+}
+.column{
+  border-right: 1px solid rgb(141, 141, 141);
+}
+
+
+.result-box {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: rgb(153, 153, 153);
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  text-align: right;
+  vertical-align: bottom;
+  color:white;
+  font-size: 40pt;
+  padding-right: 10px;
+}
+
+.button-grey {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(225,225,225);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+}
+
+.button-grey:hover {
+  background-color: rgb(178,178,178);
+}
+
+.button-grey:active {
+  background-color: rgb(178,178,178);
+}
+
+.button-grey-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(213,213,213);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+}
+
+.button-grey-top:hover {
+  background-color: rgb(170,170,170);
+}
+
+.button-grey-top:active {
+  background-color: rgb(170,170,170);
+}
+
+.button-grey-zero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(225,225,225);
+  width: 50%;
+  table-layout: fixed;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+  font-size: 16pt;
+
+
+}
+
+.button-grey-zero:hover {
+  background-color: rgb(178,178,178);
+}
+
+.button-grey-zero:active {
+  background-color: rgb(178,178,178);
+}
+
+.button-orange {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(223,145,60);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 16pt;
+
+}
+
+.button-orange:hover {
+  background-color: rgb(186, 119, 56);
+}
+.button-orange:active {
+  background-color: rgb(186, 119, 56);
+}
+
+.button-orange-bottom {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(223,145,60);
+  width: 25%;
+  border-bottom-right-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 16pt;
+
+}
+
+.button-orange-bottom:hover {
+  background-color: rgb(186, 119, 56);
+}
+.button-orange-bottom:active {
+  background-color: rgb(186, 119, 56);
+}
