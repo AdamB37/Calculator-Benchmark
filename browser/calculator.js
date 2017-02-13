@@ -2,7 +2,19 @@ function last(string) {
   return string.charAt(string.length-1)
 }
 
-function pendingOperation(string) {
+
+
+function Calculator(calculatorDomElement) {
+  this.dom = calculatorDomElement
+  console.log(this.dom)
+  this.evaluation = ""
+  this.display = this.dom.querySelector(".display")
+  this.clearHTML = document.getElementById("clear")
+  this.displayValue = "0"
+  this.arguments = 0
+}
+
+Calculator.prototype.pendingOperation = function(string) {
   if(last(string) === "+" || last(string) === "-"
   || last(string) === "*" || last(string) === "/") {
     return true
@@ -10,18 +22,8 @@ function pendingOperation(string) {
   else return false
 }
 
-function Calculator(currentDOM){
-  this.dom = currentDOM
-  console.log(typeof(document))
-  this.evaluation = ""
-  this.display = this.dom.getElementById("display")
-  this.clearHTML = this.dom.getElementById("clear")
-  this.displayValue = "0"
-  this.arguments = 0
-}
-
 Calculator.prototype.add = function() {
-  if(pendingOperation(this.evaluation)) {
+  if(this.pendingOperation(this.evaluation)) {
     this.evaluation = this.evaluation.slice(0,-1) + "+"
   }
   else {
@@ -60,7 +62,7 @@ Calculator.prototype.add = function() {
 }
 
 Calculator.prototype.subtract = function() {
-  if(pendingOperation(this.evaluation)) {
+  if(this.pendingOperation(this.evaluation)) {
     this.evaluation = this.evaluation.slice(0,-1) + "-"
   }
   else {
@@ -100,7 +102,7 @@ Calculator.prototype.subtract = function() {
 }
 
 Calculator.prototype.multiply = function() {
-  if(pendingOperation(this.evaluation)) {
+  if(this.pendingOperation(this.evaluation)) {
     this.evaluation = this.evaluation.slice(0,-1) + "*"
   }
   else {
@@ -139,7 +141,7 @@ Calculator.prototype.multiply = function() {
 }
 
 Calculator.prototype.divide = function() {
-  if(pendingOperation(this.evaluation)) {
+  if(this.pendingOperation(this.evaluation)) {
     this.evaluation = this.evaluation.slice(0,-1) + "/"
   }
   else {
@@ -260,96 +262,97 @@ Calculator.prototype.clear = function() {
   this.evaluation = ""
   this.displayValue = "0"
   this.display.innerHTML = this.displayValue
-  this.clearHTML.innerHTML = "AC"
+    this.clearHTML.innerHTML = "AC"
   this.arguments = 0
-  this.dom.getElementById("display").style.fontSize = "40pt"
+  document.getElementById("display").style.fontSize = "40pt"
 }
 
 Calculator.prototype.zero = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "0" : this.displayValue + "0"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "0" : this.displayValue + "0"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "0"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.one = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "1" : this.displayValue + "1"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "1" : this.displayValue + "1"
+  console.log(this.display)
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "1"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.two = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "2" : this.displayValue + "2"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "2" : this.displayValue + "2"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "2"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.three = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "3" : this.displayValue + "3"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "3" : this.displayValue + "3"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "3"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.four = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "4" : this.displayValue + "4"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "4" : this.displayValue + "4"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "4"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.five = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "5" : this.displayValue + "5"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "5" : this.displayValue + "5"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "5"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.six = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "6" : this.displayValue + "6"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "6" : this.displayValue + "6"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "6"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.seven = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "7" : this.displayValue + "7"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "7" : this.displayValue + "7"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "7"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.eight = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "8" : this.displayValue + "8"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "8" : this.displayValue + "8"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "8"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.nine = function() {
-  this.displayValue = this.displayValue < "1" || pendingOperation(this.evaluation)  ? "9" : this.displayValue + "9"
+  this.displayValue = this.displayValue < "1" || this.pendingOperation(this.evaluation)  ? "9" : this.displayValue + "9"
   this.display.innerHTML = this.displayValue
-  shrinkFont(this.displayValue)
+  this.shrinkFont(this.displayValue)
   this.evaluation = this.evaluation + "9"
   this.clearHTML.innerHTML = "C"
 }
 
 Calculator.prototype.shrinkFont = function(string) {
   if(string.length>7) {
-    var resultSize = parseFloat(window.getComputedStyle(this.dom.getElementById("display")).fontSize)*0.9
+    var resultSize = parseFloat(window.getComputedStyle(document.getElementById("display")).fontSize)*0.9
     if(resultSize > 8) {
-      this.dom.getElementById("display").style.fontSize = resultSize.toString() + "px"
+      document.getElementById("display").style.fontSize = resultSize.toString() + "px"
     }
   }
 }
@@ -359,114 +362,114 @@ Calculator.prototype.keyStrokeHandler = function(keyStroke) {
   switch (keyCode) {
     case 48:
       this.zero()
-      this.dom.getElementById("zero").className = "button-grey-zero-flash column"
+      document.getElementById("zero").className = "button-grey-zero-flash column"
       setTimeout(function() {
-        this.dom.getElementById("zero").className = "button-grey-zero column"
+        document.getElementById("zero").className = "button-grey-zero column"
       }, 100)
 
       break
 
     case 49:
       this.one()
-      this.dom.getElementById("one").className = "button-grey-flash column"
+      document.getElementById("one").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("one").className = "button-grey column"
+        document.getElementById("one").className = "button-grey column"
       }, 100)
       break
 
     case 50:
       this.two()
-      this.dom.getElementById("two").className = "button-grey-flash column"
+      document.getElementById("two").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("two").className = "button-grey column"
+        document.getElementById("two").className = "button-grey column"
       }, 100)
       break
 
     case 51:
       this.three()
-      this.dom.getElementById("three").className = "button-grey-flash column"
+      document.getElementById("three").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("three").className = "button-grey column"
+        document.getElementById("three").className = "button-grey column"
       }, 100)
       break
 
     case 52:
       this.four()
-      this.dom.getElementById("four").className = "button-grey-flash column"
+      document.getElementById("four").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("four").className = "button-grey column"
+        document.getElementById("four").className = "button-grey column"
       }, 100)
       break
 
     case 53:
       this.five()
-      this.dom.getElementById("five").className = "button-grey-flash column"
+      document.getElementById("five").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("five").className = "button-grey column"
+        document.getElementById("five").className = "button-grey column"
       }, 100)
       break
 
     case 54:
       this.six()
-      this.dom.getElementById("six").className = "button-grey-flash column"
+      document.getElementById("six").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("six").className = "button-grey column"
+        document.getElementById("six").className = "button-grey column"
       }, 100)
       break
 
     case 55:
       this.seven()
-      this.dom.getElementById("seven").className = "button-grey-flash column"
+      document.getElementById("seven").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("seven").className = "button-grey column"
+        document.getElementById("seven").className = "button-grey column"
       }, 100)
       break
 
     case 56:
       this.eight()
-      this.dom.getElementById("eight").className = "button-grey-flash column"
+      document.getElementById("eight").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("eight").className = "button-grey column"
+        document.getElementById("eight").className = "button-grey column"
       }, 100)
       break
 
     case 57:
       this.nine()
-      this.dom.getElementById("nine").className = "button-grey-flash column"
+      document.getElementById("nine").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("nine").className = "button-grey column"
+        document.getElementById("nine").className = "button-grey column"
       }, 100)
       break
 
     case 43:
       this.add()
-      this.dom.getElementById("add").className = "button-orange-flash column"
+      document.getElementById("add").className = "button-orange-flash column"
       setTimeout(function() {
-        this.dom.getElementById("add").className = "button-orange column"
+        document.getElementById("add").className = "button-orange column"
       }, 100)
       break
 
     case 45:
       this.subtract()
-      this.dom.getElementById("subtract").className = "button-orange-flash column"
+      document.getElementById("subtract").className = "button-orange-flash column"
       setTimeout(function() {
-        this.dom.getElementById("subtract").className = "button-orange column"
+        document.getElementById("subtract").className = "button-orange column"
       }, 100)
       break
 
     case 42:
       this.multiply()
-      this.dom.getElementById("multiply").className = "button-orange-flash column"
+      document.getElementById("multiply").className = "button-orange-flash column"
       setTimeout(function() {
-        this.dom.getElementById("multiply").className = "button-orange column"
+        document.getElementById("multiply").className = "button-orange column"
       }, 100)
       break
 
     case 47:
       this.divide()
-      this.dom.getElementById("divide").className = "button-orange-flash column"
+      document.getElementById("divide").className = "button-orange-flash column"
       setTimeout(function() {
-        this.dom.getElementById("divide").className = "button-orange column"
+        document.getElementById("divide").className = "button-orange column"
       }, 100)
       break
 
@@ -474,33 +477,33 @@ Calculator.prototype.keyStrokeHandler = function(keyStroke) {
 
     case 61:
       this.equals()
-      this.dom.getElementById("equals").className = "button-orange-bottom-flash column"
+      document.getElementById("equals").className = "button-orange-bottom-flash column"
       setTimeout(function() {
-        this.dom.getElementById("equals").className = "button-orange-bottom column"
+        document.getElementById("equals").className = "button-orange-bottom column"
       }, 100)
       break
 
     case 46:
       this.decimal()
-      this.dom.getElementById("decimal").className = "button-grey-flash column"
+      document.getElementById("decimal").className = "button-grey-flash column"
       setTimeout(function() {
-        this.dom.getElementById("decimal").className = "button-grey column"
+        document.getElementById("decimal").className = "button-grey column"
       }, 100)
       break
 
     case 99:
       this.clear()
-      this.dom.getElementById("clear").className = "button-grey-top-flash column"
+      document.getElementById("clear").className = "button-grey-top-flash column"
       setTimeout(function() {
-        this.dom.getElementById("clear").className = "button-grey-top column"
+        document.getElementById("clear").className = "button-grey-top column"
       }, 100)
       break
 
     case 37:
       this.percent()
-      this.dom.getElementById("percent").className = "button-grey-top-flash column"
+      document.getElementById("percent").className = "button-grey-top-flash column"
       setTimeout(function() {
-        this.dom.getElementById("percent").className = "button-grey-top column"
+        document.getElementById("percent").className = "button-grey-top column"
       }, 100)
       break
 
@@ -511,26 +514,38 @@ Calculator.prototype.keyStrokeHandler = function(keyStroke) {
 
 }
 
+function switchFocus() {
+
+}
 
 function getEventTarget(currentEvent) {
   currentEvent = currentEvent || window.event;
+  console.log(currentEvent.target);
   return currentEvent.target
 }
 
-function editCell(currentEvent) {
+Calculator.prototype.editCell = function(currentEvent) {
   var target = getEventTarget(currentEvent)
   if(target.tagName.toLowerCase() === "div") {
-    if(target.id === "one") calculator2.one()
+    if(target.id === "one") {
+      this.one()
+    }
   }
 }
 
-var calculators = document.getElementsByClassName("calculator")
-console.log(calculators)
-for(i = 0; i < calculators.length; i++) {
-  new Calculator(calculators[i])
-}
-document.getElementById("zero").addEventListener("click", function() { calculator1.zero() })
-// document.getElementById("one").addEventListener("click", function() { calculator2.one() })
+// editCell(event)
+var calculatorDomArray = document.querySelectorAll(".calculator")
+
+var calculator1 = new Calculator(calculatorDomArray[0])
+var calculator2 = new Calculator(calculatorDomArray[1])
+//
+// console.log("dfndflknd")
+// for(i = 0; i < calculatorDomArray.length; i++) {
+//   var calc = new Calculator(calculatorDomArray[i])
+// }
+// document.getElementsByClassName("calculator")[0].addEventListener("click", function() {})
+// document.getElementsByClassName("calculator focus").addEventListener("click", function() { calculator1.zero() })
+document.getElementById("one").addEventListener("click", function() { calculator1.one() })
 document.getElementById("two").addEventListener("click", function() { calculator1.two() })
 document.getElementById("three").addEventListener("click", function() { calculator1.three() })
 document.getElementById("four").addEventListener("click", function() { calculator1.four() })
