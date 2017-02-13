@@ -88,6 +88,19 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   font-size: 16pt;
 }
 
+.button-grey-flash {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(178,178,178);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+}
+
+
 .button-grey:hover {
   background-color: rgb(201,201,201);
   transition-duration: 0.1s
@@ -110,6 +123,18 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   font-size: 16pt;
 }
 
+.button-grey-top-flash {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(170,170,170);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16pt;
+}
+
 .button-grey-top:hover {
   background-color: rgb(191,191,191);
   transition-duration: 0.1s;
@@ -125,6 +150,21 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   justify-content: center;;
   flex-direction: column;
   background-color: rgb(225,225,225);
+  width: 91.75px;
+  table-layout: fixed;
+  border-bottom-left-radius: 5px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+  font-size: 16pt;
+  padding-left: 25px;
+}
+
+.button-grey-zero-flash {
+  display: flex;
+  justify-content: center;;
+  flex-direction: column;
+  background-color: rgb(178,178,178);
   width: 91.75px;
   table-layout: fixed;
   border-bottom-left-radius: 5px;
@@ -159,8 +199,22 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
 
 }
 
-.button-orange:hover {
+.button-orange-flash {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgb(186, 119, 56);
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 16pt;
+
+}
+
+.button-orange:hover {
+  background-color: rgb(205, 137, 58);
   transition-duration: 0.1s;
 }
 .button-orange:active {
@@ -180,7 +234,20 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   vertical-align: middle;
   color: white;
   font-size: 16pt;
+}
 
+.button-orange-bottom-flash {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(186, 119, 56);
+  width: 25%;
+  border-bottom-right-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 16pt;
 }
 
 .button-orange-bottom:hover {

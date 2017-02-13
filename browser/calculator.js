@@ -199,86 +199,159 @@ Calculator.prototype.nine = function() {
   this.clearHTML.innerHTML = "C"
 }
 
-Calculator.prototype.keyStrokeHandler = function(keyStroke) {
-  var keyCode = keyStroke.keyCode
-  switch (keyCode) {
-    case 48:
-      this.zero()
-      break
+  Calculator.prototype.keyStrokeHandler = function(keyStroke) {
+    var keyCode = keyStroke.keyCode
+    switch (keyCode) {
+      case 48:
+        this.zero()
+        document.getElementById("zero").className = "button-grey-zero-flash column"
+        setTimeout(function() {
+          document.getElementById("zero").className = "button-grey-zero column"
+        }, 100)
 
-    case 49:
-      this.one()
-      break
+        break
 
-    case 50:
-      this.two()
-      break
+      case 49:
+        this.one()
+        document.getElementById("one").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("one").className = "button-grey column"
+        }, 100)
+        break
 
-    case 51:
-      this.three()
-      break
+      case 50:
+        this.two()
+        document.getElementById("two").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("two").className = "button-grey column"
+        }, 100)
+        break
 
-    case 52:
-      this.four()
-      break
+      case 51:
+        this.three()
+        document.getElementById("three").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("three").className = "button-grey column"
+        }, 100)
+        break
 
-    case 53:
-      this.five()
-      break
+      case 52:
+        this.four()
+        document.getElementById("four").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("four").className = "button-grey column"
+        }, 100)
+        break
 
-    case 54:
-      this.six()
-      break
+      case 53:
+        this.five()
+        document.getElementById("five").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("five").className = "button-grey column"
+        }, 100)
+        break
 
-    case 55:
-      this.seven()
-      break
+      case 54:
+        this.six()
+        document.getElementById("six").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("six").className = "button-grey column"
+        }, 100)
+        break
 
-    case 56:
-      this.eight()
-      break
+      case 55:
+        this.seven()
+        document.getElementById("seven").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("seven").className = "button-grey column"
+        }, 100)
+        break
 
-    case 57:
-      this.nine()
-      break
+      case 56:
+        this.eight()
+        document.getElementById("eight").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("eight").className = "button-grey column"
+        }, 100)
+        break
 
-    case 43:
-      this.add()
-      break
+      case 57:
+        this.nine()
+        document.getElementById("nine").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("nine").className = "button-grey column"
+        }, 100)
+        break
 
-    case 45:
-      this.subtract()
-      break
+      case 43:
+        this.add()
+        document.getElementById("add").className = "button-orange-flash column"
+        setTimeout(function() {
+          document.getElementById("add").className = "button-orange column"
+        }, 100)
+        break
 
-    case 42:
-      this.multiply()
-      break
+      case 45:
+        this.subtract()
+        document.getElementById("subtract").className = "button-orange-flash column"
+        setTimeout(function() {
+          document.getElementById("subtract").className = "button-orange column"
+        }, 100)
+        break
 
-    case 47:
-      this.divide()
-      break
+      case 42:
+        this.multiply()
+        document.getElementById("multiply").className = "button-orange-flash column"
+        setTimeout(function() {
+          document.getElementById("multiply").className = "button-orange column"
+        }, 100)
+        break
 
-    case 13:
-    case 61:
-      this.equals()
-      break
+      case 47:
+        this.divide()
+        document.getElementById("divide").className = "button-orange-flash column"
+        setTimeout(function() {
+          document.getElementById("divide").className = "button-orange column"
+        }, 100)
+        break
 
-    case 46:
-      this.decimal()
-      break
+      case 13:
 
-    case 99:
-      this.clear()
-      break
+      case 61:
+        this.equals()
+        document.getElementById("equals").className = "button-orange-bottom-flash column"
+        setTimeout(function() {
+          document.getElementById("equals").className = "button-orange-bottom column"
+        }, 100)
+        break
 
-    case 37:
-      this.percent()
-      break
+      case 46:
+        this.decimal()
+        document.getElementById("decimal").className = "button-grey-flash column"
+        setTimeout(function() {
+          document.getElementById("decimal").className = "button-grey column"
+        }, 100)
+        break
 
-    default:
-      break
-  }
+      case 99:
+        this.clear()
+        document.getElementById("clear").className = "button-grey-top-flash column"
+        setTimeout(function() {
+          document.getElementById("clear").className = "button-grey-top column"
+        }, 100)
+        break
 
+      case 37:
+        this.percent()
+        document.getElementById("percent").className = "button-grey-top-flash column"
+        setTimeout(function() {
+          document.getElementById("percent").className = "button-grey-top column"
+        }, 100)
+        break
+
+      default:
+        break
+    }
 
 }
 
