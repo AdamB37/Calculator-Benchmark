@@ -3,17 +3,19 @@ function last(string) {
 }
 
 function pendingOperation(string) {
-  if(last(string) === "+" || last(string) === "-"
-  || last(string) === "*" || last(string) === "/") {
-    return true
-  }
-  else return false
+  const lastChar = last(string)
+  return (
+    lastChar === "+" ||
+    lastChar === "-" ||
+    lastChar === "*" ||
+    lastChar === "/"
+  )
 }
 
 function shrinkFont(string) {
-  if(string.length>7) {
-    var resultSize = parseFloat(window.getComputedStyle(document.getElementById("display")).fontSize)*0.9
-    if(resultSize > 8){
+  if (string.length > 7) {
+    var resultSize = parseFloat(window.getComputedStyle(document.getElementById("display")).fontSize) * 0.9
+    if (resultSize > 8){
       document.getElementById("display").style.fontSize = resultSize.toString() + "px"
     }
   }
@@ -29,10 +31,9 @@ function Calculator(){
 }
 
 Calculator.prototype.add = function() {
-  if(pendingOperation(this.evaluation)) {
+  if (pendingOperation(this.evaluation)) {
     this.evaluation = this.evaluation.slice(0,-1) + "+"
-  }
-  else {
+  } else {
     this.arguments++
     if (this.arguments === 2) {
       this.equals()
@@ -43,17 +44,17 @@ Calculator.prototype.add = function() {
 }
 
 Calculator.prototype.subtract = function() {
-  if(pendingOperation(this.evaluation)) {
+  if (pendingOperation(this.evaluation)){
     this.evaluation = this.evaluation.slice(0,-1) + "-"
+    return
   }
-  else {
-    this.arguments++
-    if (this.arguments === 2) {
-      this.equals()
-      this.arguments = 1
-    }
-    this.evaluation = this.evaluation + "-"
+
+  this.arguments++
+  if (this.arguments === 2) {
+    this.equals()
+    this.arguments = 1
   }
+  this.evaluation = this.evaluation + "-"
 }
 
 Calculator.prototype.multiply = function() {
@@ -199,8 +200,8 @@ Calculator.prototype.nine = function() {
   this.clearHTML.innerHTML = "C"
 }
 
-  Calculator.prototype.keyStrokeHandler = function(keyStroke) {
-    var keyCode = keyStroke.keyCode
+  Calculator.prototype.keyStrokeHandler = function(event) {
+    var keyCode = event.keyCode
     switch (keyCode) {
       case 48:
         this.zero()
@@ -375,4 +376,4 @@ document.getElementById("percent").addEventListener("click", function() { calcul
 document.getElementById("decimal").addEventListener("click", function() { calculator.decimal() })
 document.getElementById("sign").addEventListener("click", function() { calculator.reverseSign() })
 document.getElementById("equals").addEventListener("click", function() { calculator.equals() })
-document.addEventListener("keypress", function() { calculator.keyStrokeHandler(event) })
+document.addEventListener("keypress", function(event) { calculator.keyStrokeHandler(event) })

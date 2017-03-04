@@ -1,11 +1,23 @@
-div body .calculator .result-box .button-orange .button-orange-bottom .button-grey-top .button-grey .button-grey-zero .row-0 .row-1 .row-2 .row-3 .row-4 .row-5{
+/*div,
+body,
+.calculator,
+.result-box,
+.button-orange,
+.button-orange-bottom,
+.button-grey-top,
+.button-grey,
+.button-grey-zero,
+.row-0,
+.row-1,
+.row-2,
+.row-3 .row-4 .row-5{
   margin: 0;
   padding: 0;
   border: 0;
-}
+}*/
 
 .calculator {
-  margin:auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   width: 233.5px;
@@ -20,41 +32,17 @@ div body .calculator .result-box .button-orange .button-orange-bottom .button-gr
   height: 80.5px;
 }
 
-.row-1 {
+.calculator-row {
   flex-direction: row;
   display: flex;
   border-bottom: 1px solid rgb(141, 141, 141);
   height: 47px;
 }
 
-.row-2 {
-  flex-direction: row;
-  display: flex;
-  border-bottom: 1px solid rgb(141, 141, 141);
-  height: 47px;
+.calculator-last-row {
+  border-bottom: 0px solid transparent;
 }
 
-.row-3 {
-  flex-direction: row;
-  display: flex;
-  border-bottom: 1px solid rgb(141, 141, 141);
-  height: 47px;
-
-}
-
-.row-4 {
-  flex-direction: row;
-  display: flex;
-  border-bottom: 1px solid rgb(141, 141, 141);
-  height: 47px;
-}
-
-.row-5 {
-  flex-direction: row;
-  display: flex;
-  height: 47px;
-  justify-content: flex-end;
-}
 .column{
   border-right: 1px solid rgb(141, 141, 141);
 }
